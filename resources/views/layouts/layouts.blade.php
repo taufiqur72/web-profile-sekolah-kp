@@ -4,10 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Website Resmi SMP Al Husainiyah - Cerdas, Berkarakter, Religius">
     
+    {{-- ================================================================== --}}
+    {{-- BAGIAN SEO DINAMIS (MENGGANTIKAN METADATA STATIS YANG LAMA)         --}}
+    {{-- ================================================================== --}}
+    <title>@yield('meta_title', 'TK Al Husainiyah | Cerdas, Berkarakter, Religius')</title>
+    <meta name="description" content="@yield('meta_description', 'Website Resmi TK Al Husainiyah - Cerdas, Berkarakter, Religius')">
+    <meta name="keywords" content="@yield('meta_keywords', 'tk al husainiyah, sekolah, berita, informasi')">
+    
+    {{-- Tempat menampung Open Graph & Twitter Cards dari halaman detail berita --}}
+    @stack('meta_tags')
+    {{-- ================================================================== --}}
+
     <link rel="shortcut icon" href="{{ asset('assets/icons/edited-photo.ico') }}">
-    <title>SMP Al Husainiyah | Cerdas, Berkarakter, Religius</title>
 
     {{-- Fonts --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -68,11 +77,11 @@
                     <li class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone-fill me-2 text-success fs-5"></i>
                         <span class="text-break">(021) 12345678</span>
-                    </li>
+                    </td>
                     <li class="d-flex align-items-center mb-3">
                         <i class="bi bi-envelope-at-fill me-2 text-success fs-5"></i>
                         <span class="text-break">info@smpalhusainiyyah.sch.id</span>
-                    </li>
+                    </td>
                 </ul>
             </div>
 
@@ -112,10 +121,8 @@
             
             if (scrollY > 50) {
                 if (scrollY > lastScrollY) {
-                    // Scrolling down
                     navbar.classList.add("navbar-hidden");
                 } else {
-                    // Scrolling up
                     navbar.classList.remove("navbar-hidden");
                 }
             } else {

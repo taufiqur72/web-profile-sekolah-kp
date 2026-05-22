@@ -58,8 +58,6 @@ Route::prefix('alumni')->group(function () {
 });
 
 
-Route::prefix('berita')->group(function () {
-    // Ubah nama route di sini
-    Route::get('/', [NewsController::class, 'index'])->name('berita.index'); 
-    Route::get('/{slug}', [NewsController::class, 'show'])->name('berita.detail');
-});
+// Ganti bagian group berita lama dengan dua baris ini:
+Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
+Route::get('/berita/{slug}', [NewsController::class, 'show'])->name('berita.detail');
