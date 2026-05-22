@@ -21,13 +21,18 @@ Route::get('/', function () {
         ->take(3)
         ->get();
 
-    // 2. Ambil 4 guru untuk ditampilkan di beranda
+    // 2. Ambil 4 guru
     $dataGuru = \App\Models\Guru::orderBy('nama_lengkap', 'asc')
         ->take(4)
         ->get();
 
-    // 3. Masukkan dataGuru ke dalam compact
-    return view('welcome', compact('beritaTerkini', 'dataGuru'));
+    // 3. AMBIL 3 ALUMNI TERBARU UNTUK GALERI
+    $alumniList = \App\Models\Alumni::latest()
+        ->take(3)
+        ->get();
+
+    // 4. Masukkan ke dalam compact
+    return view('welcome', compact('beritaTerkini', 'dataGuru', 'alumniList'));
 });
 
 // Group Profil Sekolah (Sudah ditutup dengan benar)

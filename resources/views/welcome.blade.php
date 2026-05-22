@@ -111,41 +111,63 @@
     </div>
 </section>
 
-{{-- 4. ALUMNI --}}
-<section class="py-5 text-white" style="background: var(--emerald-gradient);">
+{{-- 4. GALERI ALUMNI (DINAMIS) --}}
+<section class="py-5" style="background-color: #f8f9fa;">
     <div class="container py-4">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-white">Inspirasi Alumni</h2>
-            <p class="opacity-75">Mereka yang pernah berproses bersama kami</p>
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Galeri Alumni</h2>
+            <div class="stripe-red mx-auto mb-3"></div>
+            <p class="text-muted">Kumpulan dokumentasi kenangan dari setiap angkatan</p>
         </div>
+
         <div class="row g-4">
-            <div class="col-md-6" data-aos="fade-right">
-                <div class="glass-panel p-4 h-100 border-0">
-                    <p class="fst-italic mb-4">"Belajar di SMP Al-Husainiyyah bukan hanya soal akademik, tapi pembentukan karakter yang sangat berguna saat saya di bangku perkuliahan."</p>
-                    <div class="d-flex align-items-center">
-                        <img src="https://i.pravatar.cc/150?u=10" class="rounded-circle me-3" style="width: 50px; height: 50px; border: 2px solid white;">
-                        <div>
-                            <h6 class="fw-bold mb-0 text-white">Dr. Irfan Hakim</h6>
-                            <small class="text-warning">Lulusan 2012 - Dokter Umum</small>
+            @forelse($alumniList as $alumni)
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden rounded-3 transition-hover">
+                        {{-- Thumbnail Foto --}}
+                        <div style="height: 220px; overflow: hidden;">
+                            <img src="{{ asset('storage/' . $alumni->thumbnail_photos) }}" 
+                                 class="card-img-top w-100 h-100" 
+                                 style="object-fit: cover; transition: transform 0.3s ease;" 
+                                 alt="{{ $alumni->nama_angkatan }}">
+                        </div>
+                        
+                        <div class="card-body text-center p-4">
+                            <h5 class="fw-bold text-dark mb-3">{{ $alumni->nama_angkatan }}</h5>
+                            <a href="{{ url('/alumni/' . $alumni->id) }}" class="btn btn-outline-success rounded-pill px-4 fw-bold">
+                                Lihat Galeri <i class="bi bi-images ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6" data-aos="fade-left">
-                <div class="glass-panel p-4 h-100 border-0">
-                    <p class="fst-italic mb-4">"Lingkungan yang agamis membuat saya tetap teguh memegang prinsip meskipun sekarang bekerja di industri kreatif yang sangat dinamis."</p>
-                    <div class="d-flex align-items-center">
-                        <img src="https://i.pravatar.cc/150?u=11" class="rounded-circle me-3" style="width: 50px; height: 50px; border: 2px solid white;">
-                        <div>
-                            <h6 class="fw-bold mb-0 text-white">Sarah Fauziah</h6>
-                            <small class="text-warning">Lulusan 2015 - Graphic Designer</small>
-                        </div>
-                    </div>
+            @empty
+                <div class="col-12 text-center">
+                    <p class="text-muted">Belum ada data galeri alumni.</p>
                 </div>
-            </div>
+            @endforelse
+        </div>
+
+        {{-- Tombol Lihat Semua --}}
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="{{ url('/alumni') }}" class="btn btn-success btn-lg px-5 shadow-sm">
+                Lihat Semua Angkatan
+            </a>
         </div>
     </div>
 </section>
+
+<style>
+    .transition-hover:hover img {
+        transform: scale(1.05);
+    }
+    .transition-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .transition-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.15) !important;
+    }
+</style>
 
 
 @endsection
