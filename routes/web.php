@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SchoolProfileController;
+use App\Http\Controllers\AlumniController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,14 +42,12 @@ Route::prefix('profil')->group(function () {
     });
 }); // <--- Penutup group profil yang tadinya hilang
 
-// Group Alumni
 Route::prefix('alumni')->group(function () {
-    Route::get('/info', function () {
-        return view('alumni.index');
-    });
-    Route::get('/prestasi', function () {
-        return view('alumni.detail');
-    });
+    // Arahkan ke method index di controller
+    Route::get('/', [AlumniController::class, 'index']); 
+
+    // Arahkan ke method show di controller
+    Route::get('/{id}', [AlumniController::class, 'show']);
 });
 
 // Berita
