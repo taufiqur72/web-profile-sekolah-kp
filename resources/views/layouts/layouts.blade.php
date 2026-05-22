@@ -50,11 +50,8 @@
                 <h5 class="fw-bold mb-3">Navigasi</h5>
                 <ul class="nav flex-column gap-1 list-unstyled">
                     <li><a href="{{ url('/profil/sambutanh') }}" class="text-decoration-none text-muted small">Profil</a></li>
-                    <li><a href="{{ url('/ekstrakulikuler') }}" class="text-decoration-none text-muted small">Ekstrakulikuler</a></li>
+                    <li><a href="{{ url('/ekstrakulikuler') }}" class="text-decoration-none text-muted small">Alumni</a></li>
                     <li><a href="{{ url('/berita') }}" class="text-decoration-none text-muted small">Berita</a></li>
-                    <li><a href="{{ url('/pengumuman') }}" class="text-decoration-none text-muted small">Pengumuman</a></li>
-                    <li><a href="{{ url('/ppdb') }}" class="text-decoration-none text-muted small">SPMB (PPDB)</a></li>
-                    <li><a href="{{ url('/prestasi') }}" class="text-decoration-none text-muted small">Prestasi</a></li>
                     <li><a href="{{ url('/kontak') }}" class="text-decoration-none text-muted small">Kontak</a></li>
                 </ul>
             </div>
@@ -64,7 +61,7 @@
                 <h5 class="fw-bold mb-3">Media Sosial Kami</h5>
                 <div class="d-flex gap-3">
                     <a href="https://www.facebook.com/SMPALHUSAINIYYAH/" target="_blank" class="text-dark"><i class="bi bi-facebook fs-5"></i></a>
-                    <a href="https://www.instagram.com/smpalhusainiyyah_official/" target="_blank" class="text-dark"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="https://www.instagram.com/tkalhusainiyyah/" target="_blank" class="text-dark"><i class="bi bi-instagram fs-5"></i></a>
                     <a href="https://www.youtube.com/@SMPALHUSAINIYYAH_OFFICIAL" target="_blank" class="text-dark"><i class="bi bi-youtube fs-5"></i></a>
                 </div>
                 <p class="mt-3 text-muted small">Ikuti kami untuk mendapatkan informasi terbaru seputar kegiatan sekolah.</p>

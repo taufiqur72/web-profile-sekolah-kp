@@ -16,8 +16,9 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
     protected static ?string $navigationIcon = 'heroicon-o-tag';
-    protected static ?string $navigationLabel = 'Kategori Berita';
     protected static ?string $pluralLabel = 'Kategori Berita';
+    protected static ?string $navigationGroup = 'Berita Sekolah';
+    protected static ?int    $navigationSort  = 2;
     protected static ?string $modelLabel = 'Kategori Berita';
 
     protected static bool $canCreateAnother = false;

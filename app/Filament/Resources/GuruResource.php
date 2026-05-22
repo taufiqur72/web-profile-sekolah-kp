@@ -26,6 +26,9 @@ class GuruResource extends Resource
 
     protected static ?string $slug = 'data-guru';
 
+    protected static ?string $navigationGroup = 'Profil Sekolah';
+    protected static ?int    $navigationSort  = 2;
+
     public static function form(Form $form): Form
     {
         return $form

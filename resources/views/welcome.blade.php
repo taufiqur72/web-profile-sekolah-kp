@@ -147,41 +147,5 @@
     </div>
 </section>
 
-{{-- 5. GALERI (BENTO GRID) --}}
-<section id="galeri" class="py-5 bg-white">
-    <div class="container py-4">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold">Galeri Kegiatan</h2>
-            <div class="stripe-red mx-auto"></div>
-        </div>
-        
-        <div class="bento-grid">
-            <div class="bento-item bento-large" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="Kegiatan">
-                <div class="bento-overlay">
-                    <p class="mb-0 fw-bold">Gedung Utama Sekolah</p>
-                </div>
-            </div>
-            <div class="bento-item bento-wide" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?q=80&w=2070&auto=format&fit=crop" alt="Kegiatan">
-                <div class="bento-overlay">
-                    <p class="mb-0 fw-bold">Praktikum Laboratorium IPA</p>
-                </div>
-            </div>
-            <div class="bento-item" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop" alt="Kegiatan">
-                <div class="bento-overlay">
-                    <p class="mb-0 fw-bold">Kegiatan Ekstrakurikuler</p>
-                </div>
-            </div>
-            <div class="bento-item" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b671?q=80&w=2070&auto=format&fit=crop" alt="Kegiatan">
-                <div class="bento-overlay">
-                    <p class="mb-0 fw-bold">Suasana Kelas</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 @endsection

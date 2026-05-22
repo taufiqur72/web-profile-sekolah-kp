@@ -2,20 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SchoolProfileController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
+// Halaman Beranda
 Route::get('/', function () {
     // 1. Ambil 3 berita terbaru
     $beritaTerkini = \App\Models\News::with('category')
@@ -23,7 +20,7 @@ Route::get('/', function () {
         ->take(3)
         ->get();
 
-    // 2. Ambil 4 guru untuk ditampilkan di beranda (Tambahkan ini!)
+    // 2. Ambil 4 guru untuk ditampilkan di beranda
     $dataGuru = \App\Models\Guru::orderBy('nama_lengkap', 'asc')
         ->take(4)
         ->get();
@@ -32,32 +29,31 @@ Route::get('/', function () {
     return view('welcome', compact('beritaTerkini', 'dataGuru'));
 });
 
+// Group Profil Sekolah (Sudah ditutup dengan benar)
 Route::prefix('profil')->group(function () {
-    Route::get('/sambutan', function () {
-        return view('profil.sambutan');
-    });
-    Route::get('/sejarah', function () {
-        return view('profil.sejarah');
-    });
-    Route::get('/visi-misi', function () {
-        return view('profil.visi-misi');
-    });
+    Route::get('/sambutan', [SchoolProfileController::class, 'sambutan'])->name('profil.sambutan');
+    Route::get('/sejarah', [SchoolProfileController::class, 'sejarah'])->name('profil.sejarah');
+    Route::get('/visi-misi', [SchoolProfileController::class, 'visiMisi'])->name('profil.visiMisi');
+    
     Route::get('/guru', function () {
         $gurus = \App\Models\Guru::all();
         return view('profil.guru', compact('gurus'));
     });
-});
+}); // <--- Penutup group profil yang tadinya hilang
 
+// Group Alumni
 Route::prefix('alumni')->group(function () {
     Route::get('/info', function () {
-        return view('alumni.info');
+        return view('alumni.index');
     });
     Route::get('/prestasi', function () {
-        return view('alumni.prestasi');
+        return view('alumni.detail');
     });
 });
 
-
-// Ganti bagian group berita lama dengan dua baris ini:
+// Berita
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::get('/berita/{slug}', [NewsController::class, 'show'])->name('berita.detail');
+
+// Kontak 
+Route::get('/kontak', [ContactController::class, 'index'])->name('kontak.index');

@@ -53,18 +53,6 @@
                     <a class="nav-link {{ Request::is('berita*') ? 'active fw-bold text-success' : '' }}" href="/berita">Berita</a>
                 </li>
                 
-                {{-- Dropdown: Galeri --}}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ Request::is('galeri*') ? 'active fw-bold text-success' : '' }}" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Galeri
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm">
-                        <li><a class="dropdown-item {{ Request::is('galeri') ? 'is-active' : '' }}" href="/galeri">Foto Kegiatan</a></li>
-                        <li><a class="dropdown-item {{ Request::is('galeri/ekstrakulikuler') ? 'is-active' : '' }}" href="/galeri/ekstrakulikuler">Ekstrakulikuler</a></li>
-                    </ul>
-                </li>
-                
                 {{-- Kontak --}}
                 <li class="nav-item me-3">
                     <a class="nav-link {{ Request::is('kontak*') ? 'active fw-bold text-success' : '' }}" href="/kontak">Kontak</a>
