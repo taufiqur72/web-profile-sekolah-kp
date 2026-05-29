@@ -2,7 +2,7 @@
 
 @section('content')
     {{-- 1. HERO & PENDAFTARAN --}}
-    <section id="hero" class="position-relative d-flex align-items-center" style="min-height: 80vh; overflow: hidden;">
+    <section id="hero" class="mt-0 pt-0" style="min-height: 80vh; overflow: hidden;">
 
         {{-- Gambar Background --}}
         <img src="{{ asset('assets/images/background-img.jpg') }}" alt="Hero Background"
@@ -121,10 +121,11 @@
                     <div class="col-md-4" data-aos="fade-up">
                         <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden transition-hover">
                             {{-- Ubah bagian ini --}}
+                            {{-- Ubah bagian ini --}}
                             <div class="position-relative"
-                                style="aspect-ratio: 4/3; overflow: hidden; background-color: #e9ecef;">
-                                <img src="{{ asset('storage/' . $alumni->thumbnail_photos) }}" class="w-100 h-100"
-                                    style="object-fit: contain; transition: transform 0.5s ease;"
+                                style="aspect-ratio: 4/3; overflow: hidden; background-color: #ffffff; display: flex; align-items: center; justify-content: center;">
+                                <img src="{{ asset('storage/' . $alumni->thumbnail_photos) }}" class="img-fluid"
+                                    style="max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.5s ease;"
                                     alt="{{ $alumni->nama_angkatan }}">
                             </div>
 

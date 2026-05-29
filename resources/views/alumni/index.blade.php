@@ -1,7 +1,8 @@
 @extends('layouts.layouts')
 
 @section('title', 'Galeri Alumni - TK Al Husainiyyah')
-@section('description', 'Kumpulan dokumentasi foto angkatan alumni TK Al Husainiyyah. Kenang kembali masa indah bersama teman seangkatan.')
+@section('description', 'Kumpulan dokumentasi foto angkatan alumni TK Al Husainiyyah. Kenang kembali masa indah bersama
+    teman seangkatan.')
 
 @section('content')
     {{-- Header Modern --}}
@@ -22,18 +23,19 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up">
                         {{-- Menggunakan class 'gallery-item' untuk efek hover global --}}
                         <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden gallery-item">
-                            
-                            {{-- Thumbnail dengan class global --}}
-                            <div class="position-relative overflow-hidden" style="aspect-ratio: 4/3;">
-                                <img src="{{ asset('storage/' . $alumni->thumbnail_photos) }}" 
-                                     class="w-100 h-100 img-fit-cover transition-img" 
-                                     alt="{{ $alumni->nama_angkatan }}">
+
+                            <div class="position-relative overflow-hidden"
+                                style="aspect-ratio: 4/3; background-color: #f8f9fa; display: flex; align-items: center; justify-content: center;">
+
+                                <img src="{{ asset('storage/' . $alumni->thumbnail_photos) }}"
+                                    class="w-100 h-100 transition-img" style="object-fit: contain; padding: 10px;"
+                                    alt="{{ $alumni->nama_angkatan }}">
                             </div>
 
                             <div class="card-body p-4 text-center">
                                 <h5 class="fw-bold text-dark mb-4">{{ $alumni->nama_angkatan }}</h5>
                                 <a href="{{ url('/alumni/' . $alumni->id) }}"
-                                   class="btn btn-outline-success rounded-pill px-4 fw-bold">
+                                    class="btn btn-outline-success rounded-pill px-4 fw-bold">
                                     Lihat Galeri <i class="bi bi-arrow-right ms-1"></i>
                                 </a>
                             </div>
