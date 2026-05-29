@@ -92,10 +92,9 @@
                     <div class="row" data-aos="fade-up" data-aos-delay="200">
                         <div class="col-12">
                             <div class="card border-0 shadow-sm overflow-hidden rounded-4">
-                                <iframe width="100%" height="480" frameborder="0" style="border:0;"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7197241285273!2d106.6891253!3d-6.3532999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5a6a68f773d%3A0x6b4038fc9f12dfbb!2sJl.%20Raya%20Puspitek%2C%20Kota%20Tangerang%20Selatan%2C%20Banten!5e0!3m2!1sid!2sid!4v1716380000000!5m2!1sid!2sid"
-                                    allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                                    title="Peta Lokasi Resmi TK Al Husainiyah Serpong">
+                                <iframe width="100%" height="450" frameborder="0" style="border:0;"
+                                    src="https://maps.google.com/maps?q=SMP+Al+Husainiyah&t=&z=13&ie=UTF8&iwloc=&output=embed-6.879968068718357,107.60669701786556&z=17&output=embed"
+                                    allowfullscreen loading="lazy">
                                 </iframe>
                             </div>
                         </div>
