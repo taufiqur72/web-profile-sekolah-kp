@@ -16,23 +16,20 @@ use App\Http\Controllers\AlumniController;
 // Halaman Beranda
 Route::get('/', function () {
     // 1. Ambil 3 berita terbaru
-    $beritaTerkini = \App\Models\News::with('category')
-        ->latest('posted_at')
-        ->take(3)
-        ->get();
+    // 1. Ambil 3 berita terbaru
+    $beritaTerkini = \App\Models\News::with('category')->latest('posted_at')->take(3)->get();
 
     // 2. Ambil 4 guru
-    $dataGuru = \App\Models\Guru::orderBy('nama_lengkap', 'asc')
-        ->take(4)
-        ->get();
+    $dataGuru = \App\Models\Guru::orderBy('nama_lengkap', 'asc')->take(4)->get();
 
-    // 3. AMBIL 3 ALUMNI TERBARU UNTUK GALERI
-    $alumniList = \App\Models\Alumni::latest()
-        ->take(3)
-        ->get();
+    // 3. Ambil 3 alumni terbaru
+    $alumniList = \App\Models\Alumni::latest()->take(3)->get();
 
-    // 4. Masukkan ke dalam compact
-    return view('welcome', compact('beritaTerkini', 'dataGuru', 'alumniList'));
+    // 4. AMBIL DATA PPDB (Pendaftaran)
+    $ppdb = \App\Models\FormPendaftaran::first();
+
+    // 5. Masukkan ke dalam compact
+    return view('welcome', compact('beritaTerkini', 'dataGuru', 'alumniList', 'ppdb'));
 });
 
 // Group Profil Sekolah (Sudah ditutup dengan benar)

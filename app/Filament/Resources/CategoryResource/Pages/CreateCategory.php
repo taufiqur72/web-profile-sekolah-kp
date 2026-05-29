@@ -9,6 +9,9 @@ class CreateCategory extends CreateRecord
 {
     protected static string $resource = CategoryResource::class;
 
+    protected static bool $canCreateAnother = false;
+
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

@@ -9,6 +9,8 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateSchoolProfile extends CreateRecord
 {
     protected static string $resource = SchoolProfileResource::class;
+    
+    protected static bool $canCreateAnother = false;
 
      // redirect to index category pages after CRUD (Create, Read, Update, Delete)
     public function getRedirectUrl(): string

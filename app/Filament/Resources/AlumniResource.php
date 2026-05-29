@@ -43,7 +43,10 @@ class AlumniResource extends Resource
                 Tables\Columns\ImageColumn::make('thumbnail_photos'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make()
+                        ->color('warning'),
+                Tables\Actions\DeleteAction::make()
             ]);
     }
 
